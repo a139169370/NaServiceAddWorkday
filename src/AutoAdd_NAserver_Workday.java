@@ -11,12 +11,12 @@ public class AutoAdd_NAserver_Workday {
 		Connection conn = null ;
 		Statement myStatement = null;
 		ResultSet mySet = null;
-		String url = "jdbc:mysql://172.16.6.207:3306/naservice";
+		String url = "jdbc:mysql://172.16.6.207:3306/naservice";	//jdbc连接目标
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			// Class.forName("com.mysql.jdbc.Driver ");
-			conn = DriverManager.getConnection(url,"","");
-			myStatement = conn.createStatement();
+			conn = DriverManager.getConnection(url,"","");		//账号密码
+			myStatement = conn.createStatement();				//建立JDBC连接
 		}catch (Exception e){
 			e.printStackTrace();
 		}
@@ -30,7 +30,7 @@ public class AutoAdd_NAserver_Workday {
 			CheckWorkday checkWorkday = new CheckWorkday();	//声明 调用查询是否周末方法 对象
 			DateAddOne dateAddOne = new DateAddOne();		//声明 调用日期加一方法 对象
 			//String sql = ReturnSql.ReturnSqlFunction(date);
-			int time = 100;		//循环次数
+			int time = 1;		//循环次数
 
 			date = dateAddOne.DateAddOneFunction(date);		//将获取到的日期+1
 			for (int i = 0;i < time;i++){

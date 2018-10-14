@@ -11,7 +11,6 @@ public class CheckWorkday {
 	//  该年月份代号＝该月星期几－该月日期号。
 	public boolean checkWorkDay(String date) throws Exception{	//是周末则返回false
 		//判断日期是否是周六周日
-		//基姆拉尔森计算公式
 		String strs[] = date.split("-");
 		int y =	Integer.parseInt(strs[0]);
 		int m = Integer.parseInt(strs[1]);
@@ -20,6 +19,7 @@ public class CheckWorkday {
 			m+=12;
 			y--;
 		}
+		//基姆拉尔森计算公式
 		int	Week=(d+2*m+3*(m+1)/5+y+y/4-y/100+y/400)%7;
 		switch(Week)
 		{

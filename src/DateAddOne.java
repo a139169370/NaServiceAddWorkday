@@ -7,17 +7,17 @@
 public class DateAddOne {
 	public String DateAddOneFunction(String InputDate){
 		String NewDate;
-		int MaxDate = 100;
+		int MaxDate = 100;			//设置一个月份最大天数
 		String strs[] = InputDate.split("-");
-		int y =	Integer.parseInt(strs[0]);
+		int y =	Integer.parseInt(strs[0]);		//将年月日分别取出来
 		int m = Integer.parseInt(strs[1]);
 		int d =	Integer.parseInt(strs[2]);
-		switch (m){
+		switch (m){					//设置一个月最大天数
 			case 1:
 				MaxDate = 31;
 				break;
 			case 2:
-				MaxDate = 28;
+				MaxDate = 28;		//二月统一为28天，未考虑闰年29天问题，需要可修改代码
 				break;
 			case 3:
 				MaxDate = 31;
@@ -63,7 +63,7 @@ public class DateAddOne {
 			m = 1;
 			d = 1;
 		}
-		if (m < 10 & d < 10){
+		if (m < 10 & d < 10){			//格式化输出操作
 			NewDate = y + "-0" + m + "-0" + d;
 		}else if (m < 10){
 			NewDate = y + "-0" + m + "-" + d;
